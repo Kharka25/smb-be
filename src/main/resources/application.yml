@@ -1,0 +1,21 @@
+server:
+  error:
+    include-message: always
+    include-binding-error: always
+spring:
+  datasource:
+    password:
+    url: jdbc:postgresql://localhost:5432/smb
+    username:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show_sql: true
+  security:
+    user:
+      name: admin
+      password: passw@rd
