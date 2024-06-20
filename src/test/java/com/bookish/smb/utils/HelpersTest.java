@@ -62,15 +62,3 @@ public class HelpersTest {
         assertThat(isValidEmail).isFalse();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
