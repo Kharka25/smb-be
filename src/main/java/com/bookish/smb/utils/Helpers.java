@@ -25,6 +25,10 @@ public abstract class Helpers {
         return otp.toString();
     }
 
+    public static String generateToken() {
+        return UUID.randomUUID().toString();
+    }
+
     public static boolean validateEmail(String email) {
         return emailPattern.matcher(email).matches();
     };
