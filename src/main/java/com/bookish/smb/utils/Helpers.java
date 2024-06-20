@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 
 @Service
 public abstract class Helpers {
+    private final static String EMAIL_VALIDATION_REGEX = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,8}$";
+    private static final Pattern emailPattern = Pattern.compile(EMAIL_VALIDATION_REGEX, Pattern.CASE_INSENSITIVE);
 
     public static String generateOtp(int otpLength) {
         StringBuilder otp = new StringBuilder();
@@ -22,4 +24,12 @@ public abstract class Helpers {
 
         return otp.toString();
     }
+
+    public static String generateToken() {
+        return UUID.randomUUID().toString();
+    }
+
+    public static boolean validateEmail(String email) {
+        return emailPattern.matcher(email).matches();
+    };
 }

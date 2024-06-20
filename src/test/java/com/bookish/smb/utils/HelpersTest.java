@@ -43,4 +43,22 @@ public class HelpersTest {
 
         assertThat(expectedExceptionMsg).isEqualTo(actualExceptionMsg.getMessage());
     }
+
+    @DisplayName("Email Validation")
+    @Test
+    void shouldReturnTrueIfEmailIsValid() {
+        String email = "test@mail.com";
+        boolean isValidEmail = Helpers.validateEmail(email);
+
+        assertThat(isValidEmail).isTrue();
+    }
+
+    @DisplayName("Email Validation - invalid email")
+    @Test
+    void shouldReturnFalseIfEmailIsInvalid() {
+        String email = "test.mail.com";
+        boolean isValidEmail = Helpers.validateEmail(email);
+
+        assertThat(isValidEmail).isFalse();
+    }
 }
